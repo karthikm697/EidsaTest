@@ -104,7 +104,6 @@ public class AddSubject extends AbstractComponent{
 	List<WebElement> substatus;
 	
 	
-
 	public void studyDropdown(String studId)
 	{
 		Select svalue=new Select(studydropdown);

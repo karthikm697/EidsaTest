@@ -13,7 +13,7 @@ public class ErrorValidationTest extends BaseTest {
 	@Test
 	public void loginErrorValidation() throws InterruptedException
 	{
-		studypage.login("wrongmail@yopmail.com","123456");
+		studypage.login("wrongg@yopmail.com","123456");
 		Assert.assertEquals(studypage.loginError(),"Invalid username or password.");
 	}
 	@Test

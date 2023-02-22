@@ -379,7 +379,6 @@ public class CreateStudyPage extends AbstractComponent{
 		}
 		return present;
 	}
-
 	public Boolean studyStatusValidation(String status) throws InterruptedException
 	{
 		Thread.sleep(3000);
