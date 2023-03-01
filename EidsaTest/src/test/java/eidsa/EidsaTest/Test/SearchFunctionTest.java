@@ -13,33 +13,33 @@ public class SearchFunctionTest extends BaseTest{
 	@Test
 	public void studySearch() throws Exception
 	{
-		studypage.login("karthikm697@gmail.com","Dm#12345");
+		studypage.login("karthikm697@gmail.com","Dm#123456");
 		studypage.createStudyIcon();
-		studypage.searchStudyId("SID");
-		//studypage.searchStudyStatus("Archived");
+		studypage.searchStudyId("S");
+		studypage.searchStudyStatus("Open");
 		studypage.studySearch();
 		Assert.assertTrue(studypage.studySearchValidation("SID"));
-		//Assert.assertTrue(studypage.studyStatusValidation("Archived"));
+		Assert.assertTrue(studypage.studyStatusValidation("Open"));
 	}
 	@Test
 	public void siteSearch() throws InterruptedException
 	{
-		studypage.login("karthikm697@gmail.com","Dm#12345");
+		studypage.login("karthikm697@gmail.com","Dm#123456");
 		AddSitePage addsite=new AddSitePage(driver);
 		addsite.siteMenu();
-		addsite.siteCodeSearch("SiteNo");
-//		addsite.siteNameSearch("Edit");
+		addsite.siteCodeSearch("S");
+		addsite.siteNameSearch("S");
 		addsite.siteStatusSearch("Enrolled");
 		addsite.siteSearchBtn();
 		
-		Assert.assertTrue(addsite.siteCodeSearchValidation("SiteNo"));
-//		Assert.assertTrue(addsite.siteNameSearchValidation("Edit"));
+		Assert.assertTrue(addsite.siteCodeSearchValidation("S"));
+		Assert.assertTrue(addsite.siteNameSearchValidation("S"));
 		Assert.assertTrue(addsite.siteStatusSearchValidation("Enrolled"));
 	}
 	@Test
 	public void subjectSearch() throws InterruptedException
 	{
-		studypage.login("karthikm697@gmail.com","Dm#12345");
+		studypage.login("karthikm697@gmail.com","Dm#123456");
 		AddSubject addsub=new AddSubject(driver);
 		addsub.subjectMenu();
 		addsub.siteCodeSearch("SiteNo2");
@@ -54,7 +54,7 @@ public class SearchFunctionTest extends BaseTest{
 	@Test
 	public void formsSearch() throws InterruptedException
 	{
-		studypage.login("karthikm697@gmail.com","Dm#12345");
+		studypage.login("karthikm697@gmail.com","Dm#123456");
 		FormsPage formpg=new FormsPage(driver);
 		formpg.formMenu();
 		formpg.formsSiteCodeSearch("SiteDemo25");

@@ -102,7 +102,9 @@ public class AddSubject extends AbstractComponent{
 	List<WebElement> sitecodes;
 	@FindBy(xpath="//td[3]")
 	List<WebElement> substatus;
-	
+	//Schedule verification
+	@FindBy(xpath="//td[3]")
+	List<WebElement> visitnos;
 	
 	public void studyDropdown(String studId)
 	{
@@ -175,8 +177,27 @@ public class AddSubject extends AbstractComponent{
 		alert.accept();
 		return msg;
 	}
-	public void scheduleVisit(String subid)
+	
+	public boolean verifySubject(String subjectid) throws InterruptedException 
 	{
+		Thread.sleep(2000);
+		boolean subfound=false;
+		int count = subids.size();
+		for(int i=0;i<count;i++)
+		{
+			
+			String text =  subids.get(i).getText();
+			if(text.contains(subjectid))
+			{
+				subfound=true;
+				break;
+			}
+		}
+		return subfound;
+	}
+	public void scheduleIcon(String subid) throws InterruptedException
+	{
+		Thread.sleep(3000);
 		int count=subids.size();
 		for(int i=0;i<count;i++)
 		{
@@ -187,7 +208,38 @@ public class AddSubject extends AbstractComponent{
 				break;
 			}
 		}
+	}
+	public void scheduleVisit()
+	{
 		scheduleVisit.click();
+	}
+	public String scheduleAlert() throws InterruptedException
+	{
+		Thread.sleep(3000);
+		Alert alert=driver.switchTo().alert();
+		String msg=alert.getText();
+		alert.accept();
+		return msg;
+	}
+	
+	public boolean verifySchedule(String subjectid,String scode,String vno) throws InterruptedException 
+	{
+		Thread.sleep(3000);
+		boolean schfound=false;
+		int count = subids.size();
+		for(int i=0;i<count;i++)
+		{
+			String sitecode=sitecodes.get(i).getText();
+			String subid =  subids.get(i).getText();
+			String visitno=visitnos.get(i).getText();
+			
+			if(sitecode.contains(scode)&&subid.contains(subjectid)&&visitno.contains(vno))
+			{
+				schfound=true;
+				break;
+			}
+		}
+		return schfound;
 	}
 	//subject crud
 	public void subjectEdit(String subid)
@@ -222,14 +274,14 @@ public class AddSubject extends AbstractComponent{
 		alert.accept();
 		return msg;
 	}
-	public void delSubject(String newsubId)
+	public void delSubject(String newSubId)
 	{
 		
 		int count = subids.size();
 		for(int i=0;i<count;i++)
 		{
 			String text =  subids.get(i).getText();
-			if(text.equals(newsubId))
+			if(text.equals(newSubId))
 			{
 				subdel.get(i).findElement(By.tagName("i")).click();
 				break;
@@ -238,10 +290,11 @@ public class AddSubject extends AbstractComponent{
 	}
 	public String delSubAlert() throws InterruptedException
 	{
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		Alert alert=driver.switchTo().alert();
 		String msg=alert.getText();
 		alert.accept();
+		Thread.sleep(1000);
 		return msg;
 	}
 	
@@ -261,6 +314,15 @@ public class AddSubject extends AbstractComponent{
 	{
 		elementWait(subEnrDateErr);
 		return subEnrDateErr.getText();
+	}
+	
+	public String duplicateSubAlert() throws InterruptedException
+	{
+		Thread.sleep(3000);
+		Alert alt=driver.switchTo().alert();
+		String msg=alt.getText();
+		alt.accept();
+		return msg;
 	}
 	
 	//Subject search function

@@ -42,14 +42,14 @@ public class SubmitFormTest extends BaseTest {
 	@DataProvider(name="data")
 	public Object[][] getData() throws Exception 
 	{
-		FileInputStream fis = new FileInputStream("C:\\Users\\DM Administrator\\Documents\\eidsa_study.xlsx");
+		FileInputStream fis = new FileInputStream("C:\\Users\\DM Administrator\\Documents\\eidsadata.xlsx");
 		XSSFWorkbook wb=new XSSFWorkbook(fis);
 		XSSFSheet sheet= wb.getSheetAt(0);
 		int rowCount=sheet.getPhysicalNumberOfRows();
 		XSSFRow row=sheet.getRow(1);
 		int colCount=row.getLastCellNum();
 		Object data[][]=new Object[rowCount-1][colCount];
-		for(int i=0;i<rowCount-1;i++)
+		for(int i=0;i<(rowCount-1);i++)
 		{
 			row=sheet.getRow(i+1);
 			for(int j=0;j<colCount;j++)

@@ -73,7 +73,7 @@ public class SubmitFormPage extends AbstractComponent {
 	}
 	public void submitForm(String siteidcode,String patScreeningNo,String visDate,String invInitials) throws InterruptedException
 	{
-		
+		Thread.sleep(2000);
 //		Actions actions = new Actions(driver);
 //		actions.moveToElement(siteIdCode).build().perform();
 		elementWait(siteIdCode);
@@ -91,7 +91,6 @@ public class SubmitFormPage extends AbstractComponent {
 	}
 	public void saveForm()
 	{
-
 		saveform.click();
 	}
 	public void reviewandSubmit()

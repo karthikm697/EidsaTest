@@ -50,7 +50,6 @@ public class EidsaCrudTest extends BaseTest{
 	addsite.siteEdit(crudSitecode);
 	addsite.addEdit(editSitecode,editSitename);
 	Assert.assertEquals("Site updated successfully.",addsite.editSiteAlert());
-	Thread.sleep(3000);
 	addsite.delEdit(editSitecode);
 	Assert.assertEquals("Are you sure you want to delete this site?",addsite.delSiteAlert());
 	}
@@ -79,7 +78,7 @@ public class EidsaCrudTest extends BaseTest{
 	@DataProvider(name="CrudData")
 	public Object[][] getData() throws Exception 
 	{
-		FileInputStream fis = new FileInputStream("C:\\Users\\DM Administrator\\Documents\\eidsa_study.xlsx");
+		FileInputStream fis = new FileInputStream("C:\\Users\\DM Administrator\\Documents\\eidsadata.xlsx");
 		XSSFWorkbook wb=new XSSFWorkbook(fis);
 		XSSFSheet sheet= wb.getSheetAt(1);
 		int rowCount=sheet.getPhysicalNumberOfRows();

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Eidsa Error validation">
+
+<groups>
+<run>
+<include name="duplicate data validation"></include>
+</run>
+</groups>
+
+<listeners>
+	<listener class-name="eidsa.EidsaTest.TestComponents.Listeners"></listener>
+</listeners>
+
+  <test thread-count="5" name="Error Validation">
+    <classes>
+      <class name="eidsa.EidsaTest.Test.ErrorValidationTest"/>
+    </classes>
+  </test>
+ 
+</suite> <!-- Suite -->

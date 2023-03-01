@@ -55,7 +55,7 @@ public class AddSitePage extends AbstractComponent {
 	
 	@FindBy(xpath="//div[@class='table-responsive']//td[1]")
 	List<WebElement> sitecodes;
-	@FindBy(xpath="//div[@class='table-responsive']//td[8]/i")
+	@FindBy(xpath="//div[@class='table-responsive']//td[8]")
 	List<WebElement> editSite;	
 	@FindBy(xpath="//div[@class='table-responsive']//td[11]")
 	List<WebElement> delSite;
@@ -123,12 +123,39 @@ public class AddSitePage extends AbstractComponent {
 		return msg;
 	
 	}
+	public boolean verifySite(String sitecode) throws InterruptedException 
+	{
+		Thread.sleep(2000);
+		boolean sitefound=false;
+		int count = sitecodes.size();
+		for(int i=0;i<count;i++)
+		{
+			
+			String text =  sitecodes.get(i).getText();
+			if(text.contains(sitecode))
+			{
+				sitefound=true;
+				break;
+			}
+		}
+		return sitefound;
+	}
 	
 	public String siteCodeErrorMsg()
 	{
 		elementWait(sitecodeErr);
 		return sitecodeErr.getText();
 	}
+	
+	public String duplicateSiteAlert() throws InterruptedException
+	{
+		Thread.sleep(3000);
+		Alert alt=driver.switchTo().alert();
+		String msg=alt.getText();
+		alt.accept();
+		return msg;
+	}
+	
 	public void siteEdit(String sitecode)
 	{
 
@@ -139,7 +166,7 @@ public class AddSitePage extends AbstractComponent {
 			String text =  sitecodes.get(i).getText();
 			if(text.equals(sitecode))
 			{
-				editSite.get(i).click();
+				editSite.get(i).findElement(By.tagName("i")).click();
 				break;
 			}
 		}
@@ -163,15 +190,15 @@ public class AddSitePage extends AbstractComponent {
 		return msg;
 	}
 	
-	public void delEdit(String newsitecode) throws InterruptedException
+	public void delEdit(String editsitecode) throws InterruptedException
 	{
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		int count = sitecodes.size();
 		for(int i=0;i<count;i++)
 		{
 			
 			String text =  sitecodes.get(i).getText();
-			if(text.equals(newsitecode))
+			if(text.equals(editsitecode))
 			{
 				delSite.get(i).findElement(By.tagName("i")).click();
 				break;
@@ -181,10 +208,11 @@ public class AddSitePage extends AbstractComponent {
 	
 	public String delSiteAlert() throws InterruptedException
 	{
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		Alert alert=driver.switchTo().alert();
 		String msg=alert.getText();
 		alert.accept();
+		Thread.sleep(1000);
 		return msg;
 	}
 	

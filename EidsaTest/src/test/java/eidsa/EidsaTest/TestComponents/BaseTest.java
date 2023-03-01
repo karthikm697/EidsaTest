@@ -72,7 +72,6 @@ public class BaseTest
 	{
 		driver=initializeDriver();
 		studypage = new CreateStudyPage(driver);
-
 	}
 	@AfterMethod(alwaysRun = true)
 	public void tearDown()

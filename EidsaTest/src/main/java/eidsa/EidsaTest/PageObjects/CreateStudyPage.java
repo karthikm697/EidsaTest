@@ -24,7 +24,8 @@ public class CreateStudyPage extends AbstractComponent{
 		this.driver=driver;
 		PageFactory.initElements(driver,this);
 	}
-
+	
+	//login page
 	@FindBy(xpath = "//input[@type='email']")
 	WebElement email;
 	@FindBy(xpath = "//input[@type='password']")
@@ -34,6 +35,7 @@ public class CreateStudyPage extends AbstractComponent{
 	@FindBy(xpath="//span[@class='errmsg']")
 	WebElement loginerr;
 
+	//study page
 	@FindBy(xpath="//a[@href='/studylist']")
 	WebElement study;
 	@FindBy(xpath="//img[@alt='Create study']")
@@ -70,7 +72,10 @@ public class CreateStudyPage extends AbstractComponent{
 	WebElement visitPeriodDay;
 	@FindBy(xpath="//button[@type='submit']")
 	WebElement saveVisit;
-
+	//visit list 
+	@FindBy(xpath="//td[1]")
+	List<WebElement> visitnos;
+	
 	@FindBy(xpath="(//img[@alt='Users Menu'])[2]")
 	WebElement users;
 	@FindBy(xpath="//button[@class='Page']")
@@ -135,7 +140,7 @@ public class CreateStudyPage extends AbstractComponent{
 	public void createStudyIcon() throws InterruptedException
 	{
 		
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("window.scrollBy(0,700)");
 		Thread.sleep(3000);
@@ -163,6 +168,23 @@ public class CreateStudyPage extends AbstractComponent{
 		alert.accept();
 		return msg;
 	}
+	public boolean verifyStudy(String studId) throws InterruptedException 
+	{
+		Thread.sleep(2000);
+		boolean study=false;
+		int count = studyid.size();
+		for(int i=0;i<count;i++)
+		{
+			
+			String text =  studyid.get(i).getText();
+			if(text.contains(studId))
+			{
+				study=true;
+				break;
+			}
+		}
+		return study;
+	}
 
 	//Error validation
 	public String studyIdErrorMsg()
@@ -175,7 +197,16 @@ public class CreateStudyPage extends AbstractComponent{
 		elementWait(studynameErr);
 		return studynameErr.getText();
 	}
-
+	public String duplicateStudyAlert() throws InterruptedException
+	{
+		Thread.sleep(3000);
+		Alert alt=driver.switchTo().alert();
+		String msg=alt.getText();
+		alt.accept();
+		return msg;
+	}
+	
+	//Adding visit to study
 	public void visitIcon(String studId)
 	{
 
@@ -210,6 +241,25 @@ public class CreateStudyPage extends AbstractComponent{
 		alert.accept();
 		return vmsg;
 	}
+	
+	public boolean verifyVisit(String vno) throws InterruptedException 
+	{
+		Thread.sleep(3000);
+		boolean vis=false;
+		int count = visitnos.size();
+		for(int i=0;i<count;i++)
+		{
+			
+			String text =  studyid.get(i).getText();
+			if(text.contains(vno))
+			{
+				vis=true;
+				break;
+			}
+		}
+		return vis;
+	}
+	
 	public void userPrevilege() throws InterruptedException
 	{
 		Thread.sleep(3000);
@@ -235,7 +285,8 @@ public class CreateStudyPage extends AbstractComponent{
 				String name =  names.get(i).getText();
 				if(name.contains(email))
 				{
-					Thread.sleep(2000);
+					//
+					Thread.sleep(1000);
 					previlegeicon.get(i).click();
 					namecount=1;
 					break;

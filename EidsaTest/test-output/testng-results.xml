@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
+<testng-results ignored="6" total="7" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-02-22T10:51:10 IST" name="Default suite" finished-at="2023-02-22T10:51:51 IST" duration-ms="40297">
+  <suite started-at="2023-02-27T14:33:50 IST" name="Default suite" finished-at="2023-02-27T14:34:07 IST" duration-ms="17013">
     <groups>
+      <group name="Login Error validation">
+        <method signature="ErrorValidationTest.loginErrorValidation()[pri:1, instance:eidsa.EidsaTest.Test.ErrorValidationTest@5b8dfcc1]" name="loginErrorValidation" class="eidsa.EidsaTest.Test.ErrorValidationTest"/>
+      </group> <!-- Login Error validation -->
     </groups>
-    <test started-at="2023-02-22T10:51:10 IST" name="Default test" finished-at="2023-02-22T10:51:51 IST" duration-ms="40297">
+    <test started-at="2023-02-27T14:33:50 IST" name="Default test" finished-at="2023-02-27T14:34:07 IST" duration-ms="17013">
       <class name="eidsa.EidsaTest.Test.ErrorValidationTest">
-        <test-method is-config="true" signature="CreateStudyPage()[pri:0, instance:eidsa.EidsaTest.Test.ErrorValidationTest@67c27493]" started-at="2023-02-22T10:51:10 IST" name="CreateStudyPage" finished-at="2023-02-22T10:51:44 IST" duration-ms="34149" status="PASS">
+        <test-method is-config="true" signature="CreateStudyPage()[pri:0, instance:eidsa.EidsaTest.Test.ErrorValidationTest@5b8dfcc1]" started-at="2023-02-27T14:33:50 IST" name="CreateStudyPage" finished-at="2023-02-27T14:34:03 IST" duration-ms="13078" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateStudyPage -->
-        <test-method signature="loginErrorValidation()[pri:0, instance:eidsa.EidsaTest.Test.ErrorValidationTest@67c27493]" started-at="2023-02-22T10:51:44 IST" name="loginErrorValidation" finished-at="2023-02-22T10:51:49 IST" duration-ms="4622" status="PASS">
+        <test-method signature="loginErrorValidation()[pri:1, instance:eidsa.EidsaTest.Test.ErrorValidationTest@5b8dfcc1]" started-at="2023-02-27T14:34:03 IST" name="loginErrorValidation" finished-at="2023-02-27T14:34:06 IST" duration-ms="3500" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginErrorValidation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:eidsa.EidsaTest.Test.ErrorValidationTest@67c27493]" started-at="2023-02-22T10:51:49 IST" name="tearDown" finished-at="2023-02-22T10:51:51 IST" duration-ms="1467" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:eidsa.EidsaTest.Test.ErrorValidationTest@5b8dfcc1]" started-at="2023-02-27T14:34:06 IST" name="tearDown" finished-at="2023-02-27T14:34:07 IST" duration-ms="349" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

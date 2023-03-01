@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="eidsa.EidsaTest.Test.ErrorValidationTest">
+      <class name="eidsa.EidsaTest.Test.CreateStudyTest">
         <methods>
           <include name="tearDown"/>
           <include name="CreateStudyPage"/>
-          <include name="loginErrorValidation"/>
+          <include name="AddSub" invocation-numbers="0"/>
         </methods>
-      </class> <!-- eidsa.EidsaTest.Test.ErrorValidationTest -->
+      </class> <!-- eidsa.EidsaTest.Test.CreateStudyTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

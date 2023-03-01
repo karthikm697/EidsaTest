@@ -11,6 +11,7 @@
       <class name="eidsa.EidsaTest.Test.CreateStudyTest"/>
     </classes>
   </test>
+
     <test thread-count="5" name="Submit Form Test">
     <classes>
       <class name="eidsa.EidsaTest.Test.SubmitFormTest"/>
@@ -21,7 +22,7 @@
       <class name="eidsa.EidsaTest.Test.FormsTest"/>
     </classes>
   </test>
-  <test thread-count="5" name="Crud Test">
+<!--  <test thread-count="5" name="Crud Test">
     <classes>
       <class name="eidsa.EidsaTest.Test.EidsaCrudTest"/>
     </classes>
@@ -31,10 +32,11 @@
       <class name="eidsa.EidsaTest.Test.SearchFunctionTest"/>
     </classes>
   </test>
+ -->  
   <test thread-count="5" name="Error Validation">
     <classes>
       <class name="eidsa.EidsaTest.Test.ErrorValidationTest"/>
     </classes>
   </test>
-  
+ 
 </suite> <!-- Suite -->
