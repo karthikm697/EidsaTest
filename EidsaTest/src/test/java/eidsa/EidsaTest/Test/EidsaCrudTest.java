@@ -26,13 +26,14 @@ public class EidsaCrudTest extends BaseTest{
 		studypage.createStudyIcon();
 		studypage.createStudy(crudstudyId,crudstudyname,postvisit);
 		Assert.assertEquals("Study created successfully.", studypage.studyAlert());
+		log.info("Crud study created");
 		studypage.editStudyIcon(crudstudyId);
 		studypage.editStudy(editstudyId, editstudyName);
 		Assert.assertEquals("Study updated successfully.",studypage.editStudyAlert());
-		
+		log.info("Study updated");
 		studypage.delStudyIcon(editstudyId);
 		Assert.assertEquals("Are you sure you want to delete this study?",studypage.delStudyAlert());	
-		
+		log.info("Study deleted successfully");
 	}
 	
 	
@@ -46,12 +47,15 @@ public class EidsaCrudTest extends BaseTest{
 	Thread.sleep(2000);
 	addsite.addSite(crudSitecode,crudSitename);
 	Assert.assertEquals("Site saved successfully.",addsite.siteAlert());
+	log.info("Crud site added");
 	Thread.sleep(3000);
 	addsite.siteEdit(crudSitecode);
 	addsite.addEdit(editSitecode,editSitename);
 	Assert.assertEquals("Site updated successfully.",addsite.editSiteAlert());
+	log.info("Site updated");
 	addsite.delEdit(editSitecode);
 	Assert.assertEquals("Are you sure you want to delete this site?",addsite.delSiteAlert());
+	log.info("Site deleted successfully");
 	}
 	
 	@Test(dataProvider = "CrudData")
@@ -66,13 +70,15 @@ public class EidsaCrudTest extends BaseTest{
 		addsub.createSubject(SiteIddropdown,crudSubId,crudEnroldate, "Karthik M");
 		addsub.subjectSave();
 		Assert.assertEquals("Subject added successfully.",addsub.subjectAlert());
+		log.info("Crud Subject added");
 		addsub.subjectEdit(crudSubId);
 		addsub.addEditSubject(editSubid,editEnroldate);
 		Assert.assertEquals("Subject updated successfully.",addsub.subEditAlert());
+		log.info("Subject updated ");
 		Thread.sleep(2000);
 		addsub.delSubject(editSubid);
 		Assert.assertEquals("Are you sure you want to delete this patient?",addsub.delSubAlert());
-
+		log.info("Subject deleted successfully");
 	}
 	
 	@DataProvider(name="CrudData")

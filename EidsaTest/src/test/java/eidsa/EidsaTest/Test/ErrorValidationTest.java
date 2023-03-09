@@ -13,9 +13,9 @@ public class ErrorValidationTest extends BaseTest {
 	@Test(priority = 1,groups = {"Login Error validation"})
 	public void loginErrorValidation() throws InterruptedException
 	{
-		studypage.login("wrongg@yopmail.com","1234");
+		studypage.login("deemo@yopmail.com","1234");
 		Assert.assertEquals(studypage.loginError(),"Invalid username or password.");
-		System.out.println("Invalid credentials");
+		log.info("Login Error validation");
 	}
 	@Test(priority = 2)
 	public void studyFieldValidation() throws InterruptedException
@@ -25,7 +25,7 @@ public class ErrorValidationTest extends BaseTest {
 		studypage.createStudy("", "", "2");
 		Assert.assertEquals(studypage.studyIdErrorMsg(), "Please enter a study ID");
 		Assert.assertEquals(studypage.studyNameErrorMsg(), "Please enter a study name");
-		System.out.println("Study mandatory fields validation");
+		log.info("Study mandatory fields validation");
 	}
 	@Test(priority = 3)
 	public void siteFieldValidation() throws InterruptedException
@@ -35,7 +35,7 @@ public class ErrorValidationTest extends BaseTest {
 		addsite.siteMenu();
 		addsite.addSite("","SIteError");
 		Assert.assertEquals(addsite.siteCodeErrorMsg(),"Please enter site code");
-		System.out.println("Site mandatory fields validation");
+		log.info("Site mandatory fields validation");
 	}
 	@Test(priority = 4)
 	public void subjectFieldValidation() throws InterruptedException
@@ -48,7 +48,7 @@ public class ErrorValidationTest extends BaseTest {
 		//Assert.assertEquals(addsub.sitecodeErrorMsg(), "Please select a site code");
 		Assert.assertEquals(addsub.subIdErrorMsg(), "Please enter a subject ID");
 		Assert.assertEquals(addsub.subEnrDateErrorMsg(),"Please select enrolment date");
-		System.out.println("Subject mandatory fields validation");
+		log.info("Subject mandatory fields validation");
 	}
 	@Test(priority = 5,groups = {"duplicate data validation"})
 	public void duplicateStudyValidation() throws InterruptedException
@@ -57,7 +57,7 @@ public class ErrorValidationTest extends BaseTest {
 		studypage.createStudyIcon();
 		studypage.createStudy("SID22", "sss", "2");
 		Assert.assertEquals(studypage.duplicateStudyAlert(),"Study ID already exists.");
-		System.out.println("Duplicate Study Id validation");
+		log.info("Duplicate Study ID validation");
 	}
 	
 	@Test(priority = 6,groups = {"duplicate data validation"})
@@ -68,7 +68,7 @@ public class ErrorValidationTest extends BaseTest {
 		addsite.siteMenu();
 		addsite.addSite("SiteNo2","SIteError");
 		Assert.assertEquals(addsite.duplicateSiteAlert(),"Site code already exists");
-		System.out.println("Duplicate Site code validation");
+		log.info("Duplicate Site code validation");
 	}
 	
 	@Test(priority = 7,groups = {"duplicate data validation"})
@@ -81,7 +81,7 @@ public class ErrorValidationTest extends BaseTest {
 		addsub.createSubject("SiteNo2", "sub1", "02022023", "Karthik M");
 		addsub.subjectSave();
 		Assert.assertEquals(addsub.duplicateSubAlert(),"Subject ID already exists");
-		System.out.println("Duplicate Subject Id validation");
+		log.info("Duplicate Subject ID validation");
 	}
 	
 }

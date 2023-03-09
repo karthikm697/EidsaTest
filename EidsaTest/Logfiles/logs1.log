@@ -1,0 +1,31 @@
+[INFO ] 2023-03-02 10:13:03.679 [main] BaseTest - Site added successfully
+[INFO ] 2023-03-02 10:13:05.741 [main] BaseTest - Site Siteid05 verified
+[INFO ] 2023-03-02 10:13:15.954 [main] BaseTest - Subject Added
+[INFO ] 2023-03-02 10:13:18.059 [main] BaseTest - Subject SubID05 verified
+[INFO ] 2023-03-02 10:13:24.444 [main] BaseTest - Schedule created to subject
+[INFO ] 2023-03-02 10:13:30.743 [main] BaseTest - Subject schedule verified
+[INFO ] 2023-03-02 10:13:53.372 [main] BaseTest - Form saved succesfully
+[INFO ] 2023-03-02 10:14:11.176 [main] BaseTest - Form submitted
+[INFO ] 2023-03-02 10:14:40.045 [main] BaseTest - Form verified successful
+[INFO ] 2023-03-02 10:14:54.738 [main] BaseTest - Crud site added
+[INFO ] 2023-03-02 10:15:05.297 [main] BaseTest - Site updated
+[INFO ] 2023-03-02 10:15:11.471 [main] BaseTest - Site deleted successfully
+[INFO ] 2023-03-02 10:15:35.423 [main] BaseTest - Crud study created
+[INFO ] 2023-03-02 10:15:59.439 [main] BaseTest - Crud Subject added
+[INFO ] 2023-03-02 10:16:09.010 [main] BaseTest - Subject updated 
+[INFO ] 2023-03-02 10:16:14.211 [main] BaseTest - Subject deleted successfully
+[INFO ] 2023-03-02 10:16:48.660 [main] BaseTest - Forms search functionality validated
+[INFO ] 2023-03-02 10:17:19.078 [main] BaseTest - Site search functionality validated
+[INFO ] 2023-03-02 10:17:46.516 [main] BaseTest - Study search functionality validated
+[INFO ] 2023-03-02 10:18:17.957 [main] BaseTest - Subject search functionality validated
+[INFO ] 2023-03-02 10:18:27.359 [main] BaseTest - Login Error validation
+[INFO ] 2023-03-02 10:18:48.314 [main] BaseTest - Study mandatory fields validation
+[INFO ] 2023-03-02 10:18:58.322 [main] BaseTest - Site mandatory fields validation
+[INFO ] 2023-03-02 10:19:13.472 [main] BaseTest - Subject mandatory fields validation
+[INFO ] 2023-03-02 10:19:38.430 [main] BaseTest - Duplicate Study ID validation
+[INFO ] 2023-03-02 10:19:51.534 [main] BaseTest - Duplicate Site code validation
+[INFO ] 2023-03-02 10:20:10.223 [main] BaseTest - Duplicate Subject ID validation
+[INFO ] 2023-03-08 11:05:40.307 [main] BaseTest - Forms search functionality validated
+[INFO ] 2023-03-08 11:06:13.776 [main] BaseTest - Site search functionality validated
+[INFO ] 2023-03-08 11:06:41.114 [main] BaseTest - Study search functionality validated
+[INFO ] 2023-03-08 11:07:11.780 [main] BaseTest - Subject search functionality validated

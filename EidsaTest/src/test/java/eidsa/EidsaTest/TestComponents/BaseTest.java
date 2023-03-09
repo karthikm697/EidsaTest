@@ -7,6 +7,8 @@ import java.time.Duration;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -16,6 +18,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 
 import eidsa.EidsaTest.PageObjects.CreateStudyPage;
@@ -24,7 +27,7 @@ public class BaseTest
 {
 	public WebDriver driver;
 	public CreateStudyPage studypage;
-
+	public Logger log; 
 	public WebDriver initializeDriver() throws IOException
 	{
 		Properties prop =new Properties();
@@ -56,6 +59,7 @@ public class BaseTest
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.manage().window().maximize();
 		driver.get("https://eidsa.dev.datamatica.uk/");
+		log= LogManager.getLogger(BaseTest.class);
 		return driver;	
 	}
 	public String getScreenshot(String testCaseName,WebDriver driver) throws IOException

@@ -1,0 +1,13 @@
+[INFO ] 2023-03-01 16:49:27.507 [main] BaseTest - Login Error validation
+[INFO ] 2023-03-01 16:49:53.914 [main] BaseTest - Study mandatory fields validation
+[INFO ] 2023-03-01 16:50:07.562 [main] BaseTest - Site mandatory fields validation
+[INFO ] 2023-03-01 16:50:23.725 [main] BaseTest - Subject mandatory fields validation
+[INFO ] 2023-03-01 16:50:48.951 [main] BaseTest - Duplicate Study ID validation
+[INFO ] 2023-03-01 16:51:05.977 [main] BaseTest - Duplicate Site code validation
+[INFO ] 2023-03-01 16:51:24.733 [main] BaseTest - Duplicate Subject ID validation
+[INFO ] 2023-03-01 17:29:11.136 [main] BaseTest - Site added successfully
+[INFO ] 2023-03-01 17:29:13.213 [main] BaseTest - SiteSiteid05 verified
+[INFO ] 2023-03-01 17:29:22.522 [main] BaseTest - Subject Added
+[INFO ] 2023-03-01 17:29:24.685 [main] BaseTest - SubjectSubID05verified
+[INFO ] 2023-03-01 17:29:30.923 [main] BaseTest - Schedule created to subject
+[INFO ] 2023-03-01 17:29:37.242 [main] BaseTest - Subject schedule verified

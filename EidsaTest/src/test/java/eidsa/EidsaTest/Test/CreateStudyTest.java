@@ -24,21 +24,27 @@ public class CreateStudyTest extends BaseTest {
 //	public void createStudy(String usern, String pass,String sid,String sname,String pVisit,String vno,String vname,String type,String vperiodday,String sitecode,String sitename,String subid,String enroldate,String invname,String siteidcode,String patScrNo,String visitDate,String invInitials) throws InterruptedException
 //	{
 //	studypage.login(usern,pass);
+//	log.info("Logged in successful");
 //	studypage.createStudyIcon();
 //	studypage.createStudy(sid,sname,pVisit);
 //	
 //	Assert.assertEquals("Study created successfully.", studypage.studyAlert());
+//	log.info("Study "+sid+" created");
 //	Assert.assertTrue(studypage.verifyStudy(sid));
+//	log.info("Study "+sid+" verified in grid");
 //	studypage.visitIcon(sid);
 //	studypage.addVisit(vno,vname,type,vperiodday);
 //	Assert.assertEquals("Visit added successfully.",studypage.visitAlert());
+//	log.info("Visit added to study");
 //	Assert.assertTrue(studypage.verifyVisit(vno));
+//	log.info("visit "+vno+" verified");
 //	studypage.userPrevilege();
 //	studypage.setPrevilegeIcon(usern);
 //	studypage.selPrevilege(sid);
 //	studypage.setPrevilege();
 //	Assert.assertEquals("User study privilege updated successfully.",studypage.userPrevilegeAlert());
-//	}
+//	log.info("Study privilege added to user"+usern+"successfully");
+//}
 	
 	
 	@Test(priority = 2,dataProvider = "data")
@@ -51,6 +57,7 @@ public class CreateStudyTest extends BaseTest {
 //		addsite.studyTemplate();
 //		addsite.selTemplate(sid);
 //		Assert.assertEquals("Study template updated successfully", addsite.templateAlert());
+//		log.info("Study template added");
 		//
 		addsite.studyDropdown(sid);
 		driver.navigate().refresh();
@@ -58,11 +65,14 @@ public class CreateStudyTest extends BaseTest {
 		addsite.siteMenu();
 		addsite.addSite(sitecode, sitename);
 		Assert.assertEquals("Site saved successfully.",addsite.siteAlert());
+		log.info("Site added successfully");
 		Assert.assertTrue(addsite.verifySite(sitecode));
+		log.info("Site "+sitecode+" verified"); 
 		//
 //		addsub.assignVisitTemplate(vno);
 //		addsub.assignTemplate("aa6e4d9c-e9e0-4a5c-946f-447585561f95");
 //		Assert.assertEquals("Template assigned successfully",addsub.assignTemplateAlert());
+//		log.info("Template assigned to visit");
 		//
 		addsub.subjectMenu();
 		addsub.createSubjectIcon();
@@ -70,12 +80,16 @@ public class CreateStudyTest extends BaseTest {
 		addsub.subjectSave();
 		
 		Assert.assertEquals("Subject added successfully.",addsub.subjectAlert());
+		log.info("Subject Added");
 		Assert.assertTrue(addsub.verifySubject(subid));
+		log.info("Subject "+subid+" verified");
 		addsub.scheduleIcon(subid);
 		addsub.scheduleVisit();
 		Assert.assertEquals(addsub.scheduleAlert(),"Schedule created successfully");
+		log.info("Schedule created to subject");
 		addsub.scheduleIcon(subid);
 		Assert.assertTrue(addsub.verifySchedule(subid,sitecode,vno));
+		log.info("Subject schedule verified");
 	 
 	}
 	

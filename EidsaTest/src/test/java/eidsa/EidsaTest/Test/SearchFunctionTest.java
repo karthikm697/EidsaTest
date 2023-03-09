@@ -20,6 +20,7 @@ public class SearchFunctionTest extends BaseTest{
 		studypage.studySearch();
 		Assert.assertTrue(studypage.studySearchValidation("SID"));
 		Assert.assertTrue(studypage.studyStatusValidation("Open"));
+		log.info("Study search functionality validated");
 	}
 	@Test
 	public void siteSearch() throws InterruptedException
@@ -35,6 +36,7 @@ public class SearchFunctionTest extends BaseTest{
 		Assert.assertTrue(addsite.siteCodeSearchValidation("S"));
 		Assert.assertTrue(addsite.siteNameSearchValidation("S"));
 		Assert.assertTrue(addsite.siteStatusSearchValidation("Enrolled"));
+		log.info("Site search functionality validated");
 	}
 	@Test
 	public void subjectSearch() throws InterruptedException
@@ -49,7 +51,7 @@ public class SearchFunctionTest extends BaseTest{
 		Assert.assertTrue(addsub.siteCodeSearchValidation("SiteNo2"));
 		Assert.assertTrue(addsub.siteNameSearchValidation("sub"));
 		Assert.assertTrue(addsub.siteStatusSearchValidation("Enrolled"));
-
+		log.info("Subject search functionality validated");
 	}
 	@Test
 	public void formsSearch() throws InterruptedException
@@ -66,6 +68,6 @@ public class SearchFunctionTest extends BaseTest{
 		Assert.assertTrue(formpg.formsSubIdValidation("sub4"));
 		Assert.assertTrue(formpg.formsVisitNameValidation("visit2"));
 		Assert.assertTrue(formpg.formsStatusValidation("Verified"));
-					
+		log.info("Forms search functionality validated");			
 	}
 }

@@ -34,6 +34,7 @@ public class SubmitFormTest extends BaseTest {
 		subform.submitForm(siteidcode,patScrNo,visitDate,invInitials);
 		subform.saveForm();
 		Assert.assertEquals(subform.submitformAlert(),"Form saved successfully.");
+		log.info("Form saved succesfully");
 		//subform.reviewandSubmit();
 		//Assert.assertEquals("Form submitted successfully",subform.submitformAlert());
 		

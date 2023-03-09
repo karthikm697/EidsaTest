@@ -22,7 +22,7 @@
       <class name="eidsa.EidsaTest.Test.FormsTest"/>
     </classes>
   </test>
-<!--  <test thread-count="5" name="Crud Test">
+  <test thread-count="5" name="Crud Test">
     <classes>
       <class name="eidsa.EidsaTest.Test.EidsaCrudTest"/>
     </classes>
@@ -32,7 +32,7 @@
       <class name="eidsa.EidsaTest.Test.SearchFunctionTest"/>
     </classes>
   </test>
- -->  
+ 
   <test thread-count="5" name="Error Validation">
     <classes>
       <class name="eidsa.EidsaTest.Test.ErrorValidationTest"/>

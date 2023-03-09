@@ -32,7 +32,7 @@ public class FormsTest extends BaseTest {
 		formreview.viewReviewForm(sitecode,subid,vname);
 		formreview.reviewandSubmit();
 		Assert.assertEquals("Form submitted successfully.",formreview.submitformAlert());
-		
+		log.info("Form submitted");
 	}
 	
 	@Test(priority = 5,dataProvider = "data")
@@ -50,6 +50,7 @@ public class FormsTest extends BaseTest {
 		formpage.verifyForm();
 		Assert.assertEquals(formpage.formAlert(),"Status of some of the fields are not validated or incorrect. Do you want to verify this form?");
 		Assert.assertEquals(formpage.successAlert(),"From verified successfully");
+		log.info("Form verified successful");
 	}
 	
 	
